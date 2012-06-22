@@ -97,7 +97,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: Arial;
-    color: #6493AA;
+    color: #C5C7CC;
 }
 
 p, ul, li, figcaption {
@@ -106,7 +106,11 @@ p, ul, li, figcaption {
 }
 
 a {
-    color: #002E44;
+    color: #6493AA;
+}
+
+a:link {
+    font-weight: bold;
 }
 
 a:hover {
