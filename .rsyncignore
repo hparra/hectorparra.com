@@ -1,0 +1,9 @@
+.rsyncignore
+.git
+.gitignore
+.DS_Store
+~*
+README
+README.*
+Rakefile
+sandbox/
