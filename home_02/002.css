@@ -1,0 +1,183 @@
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial;
+    background-color: black;
+  }
+
+  figure {
+    width: 100%;
+  }
+
+  figure img {
+    width: 100%;
+  }
+
+  header h1 {
+    font-family: 'Fredoka One', 'Myriad Pro', 'Myriad', arial;
+    text-transform: uppercase;
+    background-color: rgba(226, 226, 226, 1);
+
+    font-size: 2.0em;
+    line-height: 1.1em;
+    padding: 0.8em 5% 0.7em 5%;
+    
+    display: block;
+    text-align: center;
+    color: transparent;
+    
+    letter-spacing: 1.5px;
+    -webkit-text-stroke: 1.5px #555555;
+  }
+
+  header nav ul {
+    list-style-type: none;
+  }
+
+  header nav ul li {
+    margin-top: 0.5em;
+  }
+
+  header nav ul li a {
+    font-size: 1.4em;
+    text-decoration: none;
+    color: #dddddd;
+    display: block;
+    padding: 0.5em 7% 0.5em 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  header nav ul li a:hover {
+    background-color: rgba(135, 220, 1, 1.0);
+    color: white;
+  }
+
+
+
+
+
+
+  /* Article et children */
+
+
+  article {
+    background-color: black;
+    margin-top: 50px;
+  }
+
+  section {
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 2em;
+  }
+
+  section a {
+    color: rgba(135, 220, 1, 1.0);
+    text-decoration: none;
+  }
+
+  section a:hover {
+    text-decoration: underline;
+  }
+
+  section h2 {
+    font-family: 'Fredoka One', 'Myriad Pro', 'Myriad', arial;
+    margin-top: 0.5em;
+    font-size: 10em;
+    color: #eeeeee;
+  }
+
+  section p {
+    font-size: 2.3em;
+    line-height: 1.5em;
+    color: #eeeeee;
+    margin: 1em 0;
+  }
+
+
+  /* Footer */
+
+
+  footer {
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 2em; 
+  }
+
+  footer nav {
+    text-align: right;
+  }
+
+  footer nav a {
+    font-family: 'Fredoka One', 'Myriad Pro', 'Myriad', arial;
+    font-size: 2.0em;
+    line-height: 1.4em;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(135, 220, 1, 1.0);
+  }
+
+
+
+@media all and (min-width: 700px) {
+    
+  header {
+    position: absolute;
+    word-wrap: break-word;
+    top: 0;
+    left: 12%;
+    width: 25%;
+    
+  }
+
+  hr {
+    border: 0;
+    background-color: rgba(135, 220, 1, 1.0);
+    height: 50px;
+  }
+
+}
+
+
+@media all and (max-width: 699px) {
+   /* Header et children */ 
+
+
+  header {
+ 
+  }
+
+  header nav ul li {
+    margin-top: 0;
+  }
+  
+  header nav ul li a {
+    font-size: 1.2em;
+    color: #eeeeee;
+    padding: 0.6em 7%;
+    background-color: rgba(135, 220, 1, 1.0);
+    text-align: center;
+  }
+
+  hr {
+    border: 0;
+  }
+
+  section h2 {
+    margin-top: 0.2em;
+    font-size: 3em;
+    
+  }
+
+  section p {
+    font-size: 1.4em;
+    line-height: 1.5em;
+    color: #eeeeee;
+    margin: 1em 0;
+  }
+
+}
