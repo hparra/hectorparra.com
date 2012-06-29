@@ -27,10 +27,15 @@
     
     display: block;
     text-align: center;
-    color: transparent;
-    
     letter-spacing: 1.5px;
-    -webkit-text-stroke: 1.5px #555555;
+
+    /* alas text-stroke is not ready and fallback sucks */
+    /*color: transparent;
+    text-stroke: 1.5px #555555;
+    -webkit-text-stroke: 1.5px #555555;*/
+
+    color: #555555;
+    font-weight: 300;
   }
 
   header nav ul {
