@@ -70,7 +70,7 @@
 
   article {
     background-color: black;
-    margin-top: 50px;
+    border-top: solid 3em rgba(135, 220, 1, 1.0);
   }
 
   section {
@@ -139,12 +139,6 @@
     
   }
 
-  hr {
-    border: 0;
-    background-color: rgba(135, 220, 1, 1.0);
-    height: 50px;
-  }
-
 }
 
 
@@ -166,10 +160,6 @@
     padding: 0.6em 7%;
     background-color: rgba(135, 220, 1, 1.0);
     text-align: center;
-  }
-
-  hr {
-    border: 0;
   }
 
   section h2 {
