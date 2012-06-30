@@ -1,11 +1,6 @@
 /* resume.hectorparra.com.css */
 /* Ordered by TAG, CLASS, ID */
 
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
 html, body {
     margin: 0px;
     padding: 0px;
@@ -78,12 +73,10 @@ ul, ol {
     /* default is margin-left: 40px */
     /* http://www.w3.org/TR/CSS2/sample.html */
     margin: 1.12em 0;
-    padding-left: 60px;
     width: 640px;
     margin-left: auto;
     margin-right: auto;
 }
-
 
 h1, h2, h3, h4, h5, h6, p, figure, #HectorParra, aside {
     width: 700px;
