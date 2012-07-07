@@ -39,7 +39,7 @@ h3 {
 }
 
 
-p, aside {
+p {
     font-size: 1.4em;
     line-height: 1.6em;
     text-align: justify;
@@ -145,7 +145,7 @@ header, footer {
     background-color: black;
 }
 
-header p, footer p {
+footer p {
     margin: 0px auto 0px auto;
 }
 
