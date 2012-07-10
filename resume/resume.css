@@ -62,7 +62,7 @@ h3 {
 
 h4 {
     margin: 0 0 0 0.3in;
-    padding: 0 0 1em 0.2in;
+    padding: 0 0 0 0.2in;
     display: inline;
     font-size: 1.2em;
     border-left: 5px solid #dddddd;
@@ -109,6 +109,7 @@ body footer {
 
 /* PRINT CSS */
 @media print {
+
     body {
 	margin: 0;
 	padding: 0;
@@ -129,4 +130,45 @@ body footer {
     }
 }
 
+@media screen and (max-width: 8.5in) {
 
+    body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: none;
+	font-size: 80%;
+    }
+
+    article {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0;
+	background-color: none;
+	border: none;
+    }
+
+    h1 {
+	word-wrap: break-word;
+    }
+
+    h3 {
+	margin-left: 0;
+    }
+
+    h4 {
+	margin-left: 0;
+    }
+
+    p {
+	margin: 0;
+    }
+
+    ul.skills {
+	display: block;
+	margin: 0;
+	padding: 0 0.2in 0 0.2in;
+	border-left: 5px solid #dddddd;
+    }
+}
