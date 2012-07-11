@@ -7,3 +7,12 @@ RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 # redirect root to current home folder
 Redirect /index.html /002
+
+# url seo salvation
+Redirect /telios /cv/#Telios
+Redirect /sospng /cv/#ShareOurSelvesPNG
+Redirect /scsni /cv/#SCSNI
+Redirect /opticon /cv/#Opticon
+Redirect /uci /cv/#UCI
+Redirect /saddleback /cv/#Saddleback
+Redirect /hexahex /cv/#Hexahex
