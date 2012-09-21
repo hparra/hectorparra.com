@@ -6,7 +6,7 @@ RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 # redirect root to current home folder
-Redirect /index.html /002
+#Redirect /index.html /002
 
 # url seo salvation
 Redirect /telios /cv/#Telios
