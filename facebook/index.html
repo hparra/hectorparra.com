@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Place">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Hector G. Parra Alvarez">
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Facebook Prototyping and Testing">
+    
+    <!-- FB Open Graph Tags -->
+    <meta property="fb:admins" content="100001364815009" />
+    
+    <title>Facebook Prototyping</title>
+
+    <!--link href="{{ASSET_URL}}/assets/css/bootstrap.css" rel="stylesheet"-->
+
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+    <!-- FACEBOOK Stuff -->
+    <div id="fb-root"></div>
+    <script src="facebook.hectorparra.com.js"></script>
+    <script src="//cdn.hectorparra.com/dev/jquery-1.8.2.min.js"></script>
+
+    <h1>Facebook Prototyping and Commentary</h1>
+    <p>Just random FB stuffs</p>
+    
+    <h2>The "Like" Button</h2>
+    <p>See: <a href="https://developers.facebook.com/docs/reference/plugins/like/">Like Button</a></p>
+    <p>See: <a href="https://developers.facebook.com/docs/reference/javascript/">JavaScript SDK Reference</a></p>
+    <p>The "Like" button can be a tricky deal, because you may only Like domains that are registered with Facebook. This is already done if you create a Page or App. If not, you must register the domain  with <a href="https://www.facebook.com/insights/">Insights</a>. You may have to edit your website to add the fb:admin code.</p>
+
+    <p>Facebook announced it is changing how the "Like" button works on November 7, 2012. See <a href="https://developers.facebook.com/docs/reference/plugins/like/migration/">"Like Button Migration"</a> for details.</p>
+
+    <div class="fb-like" data-href="http://hectorparra.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>
+
+    <!-- LOCAL JAVASCRIPT -->
+    <!--script src="{{ASSET_URL}}/assets/js/jquery.js"></script-->
+    <!--script src="{{ASSET_URL}}/assets/js/bootstrap.js"></script-->
+
+  </body>
+</html>
