@@ -1,6 +1,40 @@
-/* Fluimage.js */
-/* Hacky Image Library Thing */
-/* Hector G. Parra Alvarez, 2012 */
+// adds .naturalWidth() and .naturalHeight() methods to jQuery
+// for retreaving a normalized naturalWidth and naturalHeight.
+// Jack Moore
+// http://www.jacklmoore.com/notes/naturalwidth-and-naturalheight-in-ie
+(function($){
+  var
+  props = ['Width', 'Height'],
+  prop;
+
+  while (prop = props.pop()) {
+    (function (natural, prop) {
+      $.fn[natural] = (natural in new Image()) ? 
+      function () {
+        return this[0][natural];
+      } : 
+      function () {
+        var 
+        node = this[0],
+        img,
+        value;
+
+        if (node.tagName.toLowerCase() === 'img') {
+          img = new Image();
+          img.src = node.src,
+          value = img[prop];
+        }
+        return value;
+      };
+    }('natural' + prop, prop.toLowerCase()));
+  }
+}(jQuery));
+
+
+
+// Fluimage.js 
+// Hacky Image Library Thing 
+// Hector G. Parra Alvarez, 2012 
 
 
 var resizeFluimage = function(e) {
@@ -8,13 +42,13 @@ var resizeFluimage = function(e) {
     var image = $(e);
     var contained = false || image.hasClass("contained");
    
-    /* naturalWidth & Height */
+    // naturalWidth & Height 
     var image_width = image.width();
     var image_height = image.height();
     var image_ratio = image_width / image_height;
     console.log("Image: " + image_width + " / " + image_height + " = " + image_ratio);
     
-    /* parent should be parent node, not window */
+    // parent should be parent node, not window 
     var parent_width = image.parent().width();
     var parent_height = image.parent().height();
     var parent_ratio = parent_width / parent_height;
@@ -22,9 +56,9 @@ var resizeFluimage = function(e) {
     
     var width, height, w_loss = 0, h_loss = 0;
     
-    /* Image Contained: image_ratio > parent_ratio */
-    /* Image Overflows: image_ratio < parent_ratio */
-    /* != is equivalent to XOR */
+    // Image Contained: image_ratio > parent_ratio 
+    // Image Overflows: image_ratio < parent_ratio 
+    // != is equivalent to XOR 
     if ((image_ratio < parent_ratio) != contained) {
 	width = parent_width;
 	height = parent_width / image_ratio;
