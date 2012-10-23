@@ -51,6 +51,7 @@ var resizeFluimage = function(e) {
     var pw = image.parent().width();
     var ph = image.parent().height();
     var pr = pw / ph;
+    console.log("p*: " + pw + "x" + ph);
 
     // http://en.wikipedia.org/wiki/Focal_point_(disambiguation)
     // focal area (x, y, w, h)

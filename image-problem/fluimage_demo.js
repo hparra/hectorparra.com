@@ -27,10 +27,11 @@ $(document).ready(function() {
     var calculateFigureHeight = function() {
 	var nav = $("#nav");
 	var figure = $("#pool");
-	figure.height(figure.parent().height() - nav.height());
+	//figure.height(figure.parent().height() - nav.height());
     }
 
     // changes height of figure, because CSS can't handle it
     calculateFigureHeight();
     $(window).on("resize", calculateFigureHeight);
+
 });
