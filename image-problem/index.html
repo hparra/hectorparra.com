@@ -2,10 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="Hector Guillermo Parra Alvarez">
     <title>HectorParra.com</title>
+
+    
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- normalize.css -->
     <link href="assets/normalize.css" rel="stylesheet">
@@ -13,10 +15,10 @@
     <link href="fluimage.css" rel="stylesheet">
 
     <!-- modernizr.js -->
-    <script type="text/javascript" src="assets/modernizr-2.5.3.js"></script>
-    <script type="text/javascript" src="http://cdn.hectorparra.com/dev/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="fluimage.js"></script>
-
+    <script src="assets/modernizr-2.5.3.js"></script>
+    <script src="http://cdn.hectorparra.com/dev/jquery-1.8.2.min.js"></script>
+    <script src="fluimage.js"></script>
+    <script src="fluimage_demo.js"></script>
   </head>
 
 
@@ -27,11 +29,19 @@
     -->
 
   <body>
+
+    <nav id="nav">
+      <ul>
+	<li><a id="contain_image" href="#">Contain Image</a></li>	
+	<li><a id="overflow_image" href="#">Overflow Image</a></li>
+	<li><a id="overflow_image_nofocal" href="#">Overflow Image w/o Focal</a></li>
+      </ul>
+    </nav>
     
     <!-- Figure -->
-    <figure>
+    <figure id="pool">
       <!-- Focal Area = <(1470, 92), (2011, 612)> -->
-      <img class="fluimage" data-focal-x-0="1470" data-focal-y-0="92" data-focal-x-1="2011" data-focal-y-1="612" src="../002/HectorParra_Ecuador_MitadDelMundo.jpg" alt="Hector Parra at Mitad del Mundo, Ecuador">
+      <img id="demo_img" class="fluimage" data-focal-x="1597" data-focal-y="105" data-focal-width="352" data-focal-height="359" src="../002/HectorParra_Ecuador_MitadDelMundo.jpg" alt="Hector Parra at Mitad del Mundo, Ecuador">
     </figure>
 
   </body>

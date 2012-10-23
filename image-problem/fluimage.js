@@ -1,4 +1,4 @@
-// adds .naturalWidth() and .naturalHeight() methods to jQuery
+ // adds .naturalWidth() and .naturalHeight() methods to jQuery
 // for retreaving a normalized naturalWidth and naturalHeight.
 // Jack Moore
 // http://www.jacklmoore.com/notes/naturalwidth-and-naturalheight-in-ie
@@ -30,53 +30,75 @@
   }
 }(jQuery));
 
-
-
 // Fluimage.js 
 // Hacky Image Library Thing 
 // Hector G. Parra Alvarez, 2012 
 
-
+// Haven't decided on best closure pattern yet
 var resizeFluimage = function(e) {
    
     var image = $(e);
-    var contained = false || image.hasClass("contained");
+
+    var contained = image.hasClass("contained");
+    var nofocal = image.hasClass("nofocal");
    
-    // naturalWidth & Height 
-    var image_width = image.width();
-    var image_height = image.height();
-    var image_ratio = image_width / image_height;
-    console.log("Image: " + image_width + " / " + image_height + " = " + image_ratio);
+    // natural image width, height, ratio
+    var nw = image.naturalWidth();
+    var nh = image.naturalHeight();
+    var nr = nw / nh; // store this? it never changes
+
+    // parent of image node width, height, ratio
+    var pw = image.parent().width();
+    var ph = image.parent().height();
+    var pr = pw / ph;
+
+    // http://en.wikipedia.org/wiki/Focal_point_(disambiguation)
+    // focal area (x, y, w, h)
+    // focal dimensions (w, h) optional
+    // focal point defaults to center of image
+    var fx = parseInt(image.attr("data-focal-x")) || nw / 2;
+    var fy = parseInt(image.attr("data-focal-y")) || nh / 2;
+    var fw = parseInt(image.attr("data-focal-width")) || 0;
+    var fh = parseInt(image.attr("data-focal-height")) || 0;
+
+    // scaled image (w, h)
+    var width, height;
     
-    // parent should be parent node, not window 
-    var parent_width = image.parent().width();
-    var parent_height = image.parent().height();
-    var parent_ratio = parent_width / parent_height;
-    console.log("Document: " + parent_width + " / " + parent_height + " = " + parent_ratio);
-    
-    var width, height, w_loss = 0, h_loss = 0;
-    
-    // Image Contained: image_ratio > parent_ratio 
-    // Image Overflows: image_ratio < parent_ratio 
+    // "contained": natural ratio > parent ratio 
+    // "overflows": natual ratio < parent ratio
     // != is equivalent to XOR 
-    if ((image_ratio < parent_ratio) != contained) {
-	width = parent_width;
-	height = parent_width / image_ratio;
-	h_loss = height - parent_height;
-	console.log("Height Loss: " + h_loss);
-    }
-    else {
-	width = parent_height * image_ratio;
-	height = parent_height;
-	w_loss = width - parent_width;
-	console.log("Width Loss: " + w_loss);
+    if ((nr < pr) != contained) {
+	width = pw;
+	height = pw / nr;
+    } else {
+	width = ph * nr;
+	height = ph;
     }            
-    console.log("Image Resized: " + width + " / " + height);
-    
+
+    // ratio of natural image to scaled
+    var scale = width / nw;
+
+    // midpoint of dilated focal area
+    var sx = (fx + fw / 2) * scale;
+    var sy = (fy + fh / 2) * scale;
+
+    var margin_left, margin_top;
+
+    // using "contained" or "nofocal" ignores focal area and centers image using midpoint
+    // else if the midpoint of focal area > midpoint of parent, then translate image without creating whitespace
+    if (contained || nofocal) { 
+	margin_left = (pw - width) / 2;
+	margin_top = (ph - height) / 2;
+    } else {
+	margin_left = (sx > pw / 2) ? Math.max(pw / 2 - sx, pw - width) : 0;
+	margin_top = (sy > ph / 2) ? Math.max(ph / 2 - sy, ph - height) : 0;
+    }
+
+    // set image
     image.width(width);
     image.height(height);
-    image.css("margin-left", - w_loss / 2);
-    image.css("margin-top", - h_loss / 2);
+    image.css("margin-left", margin_left);
+    image.css("margin-top", margin_top);
 };
 
 var resizeFluimages = function() {
