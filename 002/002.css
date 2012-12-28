@@ -96,6 +96,11 @@
     margin: 1em 0;
   }
 
+	section ul {
+		font-size: 2.3em;
+		line-height: 1.5em;
+		margin: 1em 0;
+	}
 
   /* Footer */
 
@@ -171,6 +176,12 @@
     font-size: 1.4em;
     line-height: 1.5em;
     color: #eeeeee;
+    margin: 1em 0;
+  }
+
+  section ul {
+    font-size: 1.4em;
+    line-height: 1.5em;
     margin: 1em 0;
   }
 
