@@ -1,0 +1,123 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+body {
+	background: {
+		color: #EEEEEE;
+	};
+}
+
+/* a piece of paper ... */
+article {
+  
+	$line-width: 35em;
+	$paper-margin: 30px;
+               
+	margin: 20px auto;
+	width: $line-width; /* extract */
+	background: {
+		color: white;
+	};
+	border: 1px solid #DDDDDD;
+
+	font-family: Arial, "MS Trebuchet", sans-serif;
+
+	h1, h2, h3 {
+		font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+		padding: 0;
+	}
+	
+	h1 {
+		font-size: 2.5em;
+		margin: 1em $paper-margin 0.8em $paper-margin;
+ 	}
+
+	h2 {
+		font-size: 2em;
+		margin: 2em $paper-margin 0.8em $paper-margin;
+ 	}
+
+	h3 {
+		font-size: 1.5em;
+		margin: 3em $paper-margin 0.8em $paper-margin;
+ 	}
+
+	@mixin typography {
+		font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+		color: #222222;
+		font-size: 1.2em;
+		line-height: 1.5em;
+		text-align: justify;
+		margin-top: 0.8em;
+		margin-bottom: 0;
+		
+		a {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		
+	}
+
+	p {
+		@include typography;
+		
+		margin-left: $paper-margin;
+		margin-right: $paper-margin;
+   	
+	}
+	
+	ul {
+		@include typography;
+		
+		margin-left: $paper-margin;
+		margin-right: $paper-margin;
+		
+		list-style-type: disc;
+		margin-left: 40px + $paper-margin;
+		
+		li {	
+      
+		}
+	}
+	
+	/* try this later: http://css-tricks.com/responsive-data-tables/ */
+	table {
+		@include typography;
+		
+		margin-left: auto;
+		margin-right: auto;
+		
+		thead {
+			font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+			border-bottom: 1px solid #DDDDDD;
+			th {
+				width: 90px;
+				text-align: center;
+				padding: 0 5px 0 5px;
+			}
+			th:first-child {
+				width: 120px;
+				text-align: left;
+			}
+		}
+		tbody {
+			
+			tr:hover {
+				background-color: #DDDDDD;
+			};
+			
+			td {
+				text-align: center;
+			}
+		}
+	}	
+
+}
+
+
